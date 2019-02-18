@@ -1,0 +1,50 @@
+.l-footer {
+    background: $black2;
+
+    &__inner {
+        height: 7rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+
+        @include media('<=m') {
+            height: unset;
+        }
+    }
+
+    &__copyright,
+    &__designer {
+
+        @include media('<=m') {
+            width: 100%;
+        }
+        
+        p {
+            font-size: 1.5rem;
+            color: $white2;
+            font-weight: 600;
+            line-height: 7rem;
+            margin: 0;
+
+            @include media('<=m') {
+                line-height: 2.5;
+            }
+        }
+    }
+
+    &__designer {
+        p {
+            font-size: 1.4rem;
+        }
+
+        svg {
+            width: 1em;
+            height: 1em;
+                
+            path {
+                fill: $pink;
+            }
+        }
+    }
+}

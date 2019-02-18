@@ -1,0 +1,27 @@
+.l-grid-wrapper {
+    width: 100%;
+}
+
+.l-grid {
+    @extend %display-flex;
+    @extend %align-items-stretch;
+    @extend %justify-content-flex-start;
+    @extend %flex-wrap-wrap;
+}
+
+@for $i from 1 through 12 {
+    .l-grid__item-#{$i} {
+        width: 100% / 12 * $i;
+    }
+}
+
+
+@each $name, $value in $breakpoints {
+    @include media("<=#{$name}") {
+        @for $i from 1 through 12 {
+            .l-grid__item-#{$i}\@#{$name} {
+                width: 100% / 12 * $i;
+            }
+        }
+    }
+}

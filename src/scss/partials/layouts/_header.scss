@@ -1,0 +1,15 @@
+.l-header {
+    position: absolute;
+    margin: auto;
+    top: 13rem;
+    z-index: map-get($z-indexes, header);
+    width: 100%;
+    left: 0;
+    right: 0;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

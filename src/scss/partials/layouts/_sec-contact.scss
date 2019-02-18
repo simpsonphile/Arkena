@@ -1,0 +1,45 @@
+.l-sec-contact { 
+
+    &__inner {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include media('<=m'){
+            flex-direction: column;
+        }
+    }
+
+    &__heading {
+        width: 100%;
+        font-size: 3rem;
+        color: $grey2;
+        text-align: center;
+        letter-spacing: -1px;
+        word-spacing: 1px;
+    }
+
+    &__form-wrapper {
+        width: 50%;
+        max-width: 38rem;
+
+        @include media('<=m'){
+            width: 100%;
+            max-width: unset;
+        }
+    }
+
+    &__form {
+
+    }
+
+    &__adresses {
+        width: 50%;
+
+        @include media('<=m'){
+            width: 100%;
+        }
+    }
+}

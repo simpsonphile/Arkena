@@ -1,0 +1,22 @@
+.f-field {
+    margin-bottom: 3rem;
+
+    &__text,
+    &__email {
+        line-height: 5rem;
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        font-size: 1.4rem;
+        font-weight: 300;
+        padding: 0 1.8rem;
+    }
+
+    &--grey {
+        .f-field__text,
+        .f-field__email,
+        .f-field__textarea {
+            background: $white4;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+
+/* Colors
+========================================================================== */
+$color_white:       #fff;
+$color_black:       #000000;
+$color_gray:        #272727;
+$color_red:         #dc4e58;
+
+$red: #f7564b;
+$white: #fff;
+$white2: #f3f3f3;
+$white3: #f5f5f5;
+$white4: #ededed;
+$black: #383838;
+$black2: #333333;
+$grey: #999797;
+$grey: #555555;
+$grey2: #666666;
+$grey3: #888888;
+$pink: #f4728f;
+
+$scotch-colors: (
+    'black': (
+        $color_black
+    ),
+    'white': (
+        $color_white
+    ),
+    'gray': (
+        $color_gray
+    )
+);
+
+/* z-indexes
+========================================================================== */
+$z-indexes : (
+    header: 99,
+    nav: 100,
+    hamburger: 101
+
+);
+
+/* Fonts
+========================================================================== */
+$font_montserrat:        'Montserrat';
+
+$font_normal:          $font_montserrat, Arial, sans-serif;
+
+/* Animations
+========================================================================== */
+$transition_speed:      200ms;
+
+/* Sizes
+========================================================================== */
+$gutter:                20px;
+
+$size_inner:            1210px;
+
+/* Breakpoints
+========================================================================== */
+$breakpoint_laptop: 1620px;
+$breakpoint_laptop_small: 1280px;
+$breakpoint_tablet: 1200px;
+$breakpoint_tablet_middle: 980px;
+$breakpoint_mobile: 670px;
+$breakpoint_mobile_small: 480px;
+$breakpoint_mobile_thin: 370px;
+$max-breakpoint: 1920;
+
+$breakpoints: (
+    l: $breakpoint_laptop,
+    l-s: $breakpoint_laptop_small,
+    t: $breakpoint_tablet,
+    t-m: $breakpoint_tablet_middle,
+    m: $breakpoint_mobile,
+    m-s: $breakpoint_mobile_small,
+    m-t: $breakpoint_mobile_thin
+);
+
+/* body {
+    @include media("<=t") {
+        background: blue;
+    }
+} */

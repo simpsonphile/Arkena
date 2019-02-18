@@ -1,0 +1,15 @@
+.c-actions {
+    @extend %helper-clear-margins;
+
+    margin: 2rem 0;
+}
+
+.c-actions-list {
+    @extend %display-flex;
+    @extend %align-items-center;
+    @extend %justify-content-flex-start;
+}
+
+.c-actions-list__item:not(:last-child) {
+    margin-right: 2rem;
+}

@@ -1,0 +1,355 @@
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+
+/* Clearfixes
+   ========================================================================== */
+%helper-clear {
+    content: ".";
+    @extend %helper-display-block;
+    height: 0;
+    margin: 0!important;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+    line-height: 0;
+}
+
+%helper-clear:after {
+    content: "";
+    @extend %helper-display-block;
+    clear: both;
+    margin: 0!important;
+}
+
+%helper-clear-margins {
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+%helper-clear-top-margin {
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+%helper-clear-bottom-margin {
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+%helper-clear-left-margin {
+    &:first-child {
+        margin-right: 0;
+    }
+}
+
+%helper-clear-right-margin {
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+%helper-display-block {
+    display: block;
+}
+
+%helper-display-inline-block {
+    display: inline-block;
+}
+
+%helper-reset-btn {
+    border: none;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+%helper-reset-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+%helper-indent {
+    @extend %helper-display-block;
+
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+    text-indent: -99998em;
+}
+
+%helper-absolute-center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
+
+%helper-after {
+    @extend %helper-display-block;
+
+    content: '';
+}
+
+%helper-after-absolute {
+    position: absolute;
+
+    @extend %helper-after;
+}
+
+%helper-after-absolute-center {
+    @extend %helper-after;
+    @extend %helper-absolute-center;
+}
+
+%helper-bg-size-cover {
+    background-size: cover;
+}
+
+%helper-bg-repeat-no-repeat {
+    background-repeat: no-repeat;
+}
+
+%helper-bg-position-center-center {
+    background-position: 50% 50%;
+}
+
+/* Display flex
+   ========================================================================== */
+%display-flex {
+    display: flex;
+}
+
+%display-inline-flex {
+    display: inline-flex;
+}
+
+@mixin display-flex() {
+    @extend %display-flex;
+}
+
+@mixin display-inline-flex() {
+    @extend %display-inline-flex;
+}
+
+/*
+    Flex direction
+ */
+%flex-direction-row {
+    flex-direction: row;
+}
+%flex-direction-row-reverse {
+    flex-direction: row-reverse;
+}
+%flex-direction-column {
+    flex-direction: column;
+}
+%flex-direction-column-reverse {
+    flex-direction: column-reverse;
+}
+%flex-direction-inherit {
+    flex-direction: inherit;
+}
+@mixin fl-flex-direction($direction: row) {
+    @if not index((row, row-reverse, column, column-reverse, inherit), $direction) {
+        $direction: row;
+    }
+    @extend %flex-direction-#{$direction};
+}
+
+/*
+    Flex wrap
+ */
+%flex-wrap-nowrap {
+    flex-wrap: nowrap;
+}
+%flex-wrap-wrap {
+    flex-wrap: wrap;
+}
+%flex-wrap-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+%flex-wrap-inherit {
+    flex-wrap: inherit;
+}
+@mixin fl-flex-wrap($wrap: nowrap) {
+    @if not index((nowrap, wrap, wrap-reverse, inherit), $wrap) {
+        $wrap: nowrap;
+    }
+    @extend %flex-wrap-#{$wrap};
+}
+
+/*
+    Flex flow
+ */
+@mixin fl-flex-flow($direction, $wrap) {
+    @include fflex-direction($direction);
+    @include fflex-wrap($wrap);
+}
+
+/*
+    Order
+ */
+@mixin order($order: 0) {
+    order: $order;
+}
+
+/*
+    Flex grow
+ */
+@mixin fl-flex-grow($grow: 0) {
+    flex-grow: $grow;
+}
+
+/*
+    Flex shrink
+ */
+@mixin fl-flex-shrink($shrink: 1) {
+    flex-shrink: $shrink;
+}
+
+/*
+    Flex basis
+ */
+@mixin fl-flex-basis($basis: auto) {
+    flex-basis: $basis;
+}
+
+/*
+    Flex
+ */
+@mixin flex($grow: 0, $shrink: 1, $basis: auto) {
+    @include fl-flex-grow($grow);
+    @include fl-flex-shrink($shrink);
+    @include fl-flex-basis($basis);
+}
+
+/*
+    Justify content
+ */
+%justify-content-flex-start {
+    justify-content: flex-start;
+}
+%justify-content-flex-end {
+    justify-content: flex-end;
+}
+%justify-content-center {
+    justify-content: center;
+}
+%justify-content-space-between {
+    justify-content: space-between;
+}
+%justify-content-space-around {
+    justify-content: space-around;
+}
+%justify-content-stretch {
+    justify-content: stretch;
+}
+%justify-content-inherit {
+    justify-content: inherit;
+}
+@mixin fl-justify-content($justify: flex-start) {
+    @if not index((flex-start, flex-end, center, space-between, space-around, inherit), $justify) {
+        $justify: flex-start;
+    }
+    @extend %justify-content-#{$justify};
+}
+
+/*
+    Align items
+ */
+%align-items-flex-start {
+    align-items: flex-start;
+}
+%align-items-flex-end {
+    align-items: flex-end;
+}
+%align-items-center {
+    align-items: center;
+}
+%align-items-baseline {
+    align-items: baseline;
+}
+%align-items-stretch {
+    align-items: stretch;
+}
+%align-items-inherit {
+    align-items: inherit;
+}
+@mixin fl-align-items($align: stretch) {
+    @if not index((flex-start, flex-end, center, baseline, stretch, inherit), $align) {
+        $align: stretch;
+    }
+    @extend %align-items-#{$align};
+}
+
+/*
+    Align self
+ */
+%align-self-auto {
+    align-self: auto;
+}
+%align-self-flex-start {
+    align-self: flex-start;
+}
+%align-self-flex-end {
+    align-self: flex-end;
+}
+%align-self-center {
+    align-self: center;
+}
+%align-self-baseline {
+    align-self: baseline;
+}
+%align-self-stretch {
+    align-self: stretch;
+}
+%align-self-inherit {
+    align-self: inherit;
+}
+@mixin fl-align-self($align: auto) {
+    @if not index((auto, flex-start, flex-end, center, baseline, stretch, inherit), $align) {
+        $align: auto;
+    }
+    @extend %align-self-#{$align};
+}
+
+/*
+    Align content
+ */
+%align-content-flex-start {
+    align-content: flex-start;
+}
+%align-content-flex-end {
+    align-content: flex-end;
+}
+%align-content-center {
+    align-content: center;
+}
+%align-content-space-between {
+    align-content: space-between;
+}
+%align-content-space-around {
+    align-content: space-around;
+}
+%align-content-stretch {
+    align-content: stretch;
+}
+%align-content-inherit {
+    align-content: inherit;
+}

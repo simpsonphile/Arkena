@@ -1,0 +1,53 @@
+/* Radio / checkbox - base
+   ========================================================================== */
+.f-choose {
+    cursor: pointer;
+
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
+.f-choose__indicator {
+    position: relative;
+    display: block;
+}
+
+.f-choose__indicator:after {
+    position: absolute;
+    display: none;
+    content: '';
+}
+
+input:checked + .f-choose__indicator:after {
+    display: block;
+}
+
+/* Checkbox
+    ========================================================================== */
+.f-choose--checkbox {
+    .f-choose__indicator {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        border: 1px solid $color_gray;
+        border-radius: 0.3rem;
+        background: $color_white;
+    }
+
+    .f-choose__indicator:after {
+        top: 0.2rem;
+        left: 0.8rem;
+        width: 0.8rem;
+        height: 1.5rem;
+        transform: rotate(45deg);
+        border: solid $color_gray;
+        border-width: 0 0.2rem 0.2rem 0;
+    }
+
+    input:checked + .f-choose__indicator {
+        border-color: $color_gray;
+    }
+}

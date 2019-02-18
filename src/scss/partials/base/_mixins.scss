@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+/* 1. Font smoothing
+========================================================================== */
+/* Better font-rendering on OSX
+   https://maximilianhoffmann.com/posts/better-font-rendering-on-osx
+*/
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+/* 2. Animation
+   ========================================================================== */
+
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+/* 3. Get font vw
+========================================================================== */
+
+// Function
+@function get-vw($target) {
+    // 1 vw is equal to 1% of the viewport width
+    $vw-context: ($max-breakpoint * .01) * 1px; // 1% viewport width
+    @return ($target/$vw-context) * 1vw;
+}
+
+// Mixin
+@mixin vw($size) {
+    font-size: $size;
+    font-size: get-vw($size);
+}
+
+/* 4. Arrow
+========================================================================== */
+@mixin arrow($position, $width, $color) {
+    @if ($position == 'top') {
+        border-top: $width solid $color;
+        border-right: $width solid transparent;
+        border-left: $width solid transparent;
+    } @else if ($position == 'bottom') {
+        border-bottom: $width solid $color;
+        border-right: $width solid transparent;
+        border-left: $width solid transparent;
+    } @else if ($position == 'left') {
+        border-left: $width solid $color;
+        border-top: $width solid transparent;
+        border-bottom: $width solid transparent;
+    } @else if ($position == 'right') {
+        border-right: $width solid $color;
+        border-top: $width solid transparent;
+        border-bottom: $width solid transparent;
+    }
+}
+
+@mixin arrow-position ($position, $width) {
+    @if ($position == 'top') {
+        bottom: -$width;
+    } @else if ($position == 'bottom') {
+        top: -$width;
+    } @else if ($position == 'left') {
+        right: -$width;
+    } @else if ($position == 'right') {
+        left: -$width;
+    }
+}

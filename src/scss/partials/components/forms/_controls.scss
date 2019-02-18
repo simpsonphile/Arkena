@@ -1,0 +1,33 @@
+.f-control-wrapper,
+.f-control {
+    position: relative;
+}
+
+/* Default
+   ========================================================================== */
+.f-control--default {
+    padding: 1.5rem;
+
+    font-size: 1.6rem;
+
+    border: 1px solid $color_gray;
+    border-radius: 0.4rem;
+
+    color: $color_gray;
+    background: $color_white;
+
+    &::placeholder {
+        color: $color_gray;
+    }
+
+    &:focus-within,
+    &:focus {
+        border-color: $color_black;
+    }
+}
+
+/* Text
+   ========================================================================== */
+.f-control--text {
+    height: 4.5rem;
+}

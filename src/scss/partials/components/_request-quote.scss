@@ -1,0 +1,13 @@
+.c-request-quote {
+    &__form {display: flex;}
+    &__field {margin-right: 2rem;}
+    &__input-text {
+        min-width: 28rem;
+
+        @include media('<=m-t'){
+            min-width: 25rem;
+        }
+
+    }
+    &__input-submit {display: inline-block; width: unset;}
+}

@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="pl" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %} Base title {% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        {% include "head/head-links.twig" %}
+    </head>
+    <body class="js-body">
+
+        <div class="l-page">
+            {% block body %}
+
+            {% endblock %}
+        </div>
+
+        {% load static %}
+
+        <script>
+            DATA_STATIC_URL = "{{ static }}"
+        </script>
+
+        <script src="{% static 'js/app.js' %}"></script>
+    </body>
+</html>

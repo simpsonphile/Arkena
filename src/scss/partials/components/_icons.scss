@@ -1,0 +1,54 @@
+.o-ico {
+    position: relative;
+    display: block;
+    font-size: 0;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/**
+ * Sizes
+ * xs
+ * xxs
+ * s
+ * m
+ * l
+ * xl
+ * xxl
+ */
+
+/* Arrow 1 - right / left / down / up
+   ========================================================================== */
+.o-ico {
+    &--arrow-1 {
+        &.o-ico--size-m {
+            width: 17px;
+            height: 10px;
+        }
+    }
+}
+
+/* Arrow 2 - right / left / down / up
+   ========================================================================== */
+.o-ico {
+    &--arrow-2 {
+        &.o-ico--size-m {
+            width: 48px;
+            height: 48px;
+        }
+    }
+}
+
+/* Arrow 3 - right / left / down / up
+   ========================================================================== */
+.o-ico {
+    &--arrow-3 {
+        &.o-ico--size-m {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

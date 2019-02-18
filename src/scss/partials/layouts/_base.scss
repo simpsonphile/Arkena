@@ -1,0 +1,20 @@
+
+/* Inner
+   ========================================================================== */
+
+.l-inner {
+    position: relative;
+    width: 100%;
+    max-width: $size_inner;
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutter;
+    padding-right: $gutter;
+}
+
+/* Page
+   ========================================================================== */
+.l-page {
+    overflow: hidden;
+}

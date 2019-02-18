@@ -1,0 +1,127 @@
+.c-btn {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+
+    font-size: 1.6rem;
+    line-height: 5rem;
+    padding: 0 2.2rem;
+    font-weight: 600;
+    border: 0;
+    background: none;
+
+    border-radius: 4px;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+}
+
+.c-btn--red {
+    background: $red;
+    color: $white;
+}
+
+.c-btn input[type="file"] {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.c-btn__wrap {
+    @extend %display-flex;
+    @extend %align-items-center;
+    @extend %justify-content-center;
+
+    height: 100%;
+}
+
+.c-btn__ico {
+    font-size: 0;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.c-btn__ico {
+    margin-left: 1rem;
+
+    &:first-child {
+        margin-right: 1rem;
+    }
+}
+
+.c-btn--hamburger {
+    display: none;
+
+    position: relative;
+    width: 6rem;
+    height: 4.5rem;
+    transform: rotate(0deg);
+    transition: transform .5s ease-in-out;
+    z-index: map-get($z-indexes, hamburger);
+    z-index: 101;
+
+    &.is-visible\@t-m {
+        @include media("<=t-m") {
+            display: block;
+        }
+    }
+}
+
+.c-btn--hamburger span {
+    display: block;
+    position: absolute;
+    height: .9rem;
+    width: 100%;
+    background: $white;
+    border-radius: .9rem;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.c-btn--hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+.c-btn--hamburger span:nth-child(2),
+.c-btn--hamburger span:nth-child(3) {
+    top: 1.8rem;
+}
+
+.c-btn--hamburger span:nth-child(4) {
+    top: 3.6rem;
+}
+
+.c-btn--hamburger.is-active span:nth-child(1) {
+    top: 1.8rem;
+    width: 0%;
+    left: 50%;
+}
+
+.c-btn--hamburger.is-active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.c-btn--hamburger.is-active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.c-btn--hamburger.is-active span:nth-child(4) {
+    top: 1.8rem;
+    width: 0%;
+    left: 50%;
+}
+
+.c-link--alt {
+    font-size: 1.2rem;
+}

@@ -1,0 +1,52 @@
+
+/* Base
+   ========================================================================== */
+html {
+    font-size: 62.5%; /* 10px */
+
+    @include media("<=t-m") {
+        font-size: 56.25%; /* 9px */
+    }
+
+    @include media("<=m") {
+        font-size: 50%; /* 8px */
+    }
+
+    @include media("<=m-s") {
+        font-size: 43.75%; /* 7px */
+    }
+
+    @include media("<=m-t") {
+        font-size: 37.5%; /* 7px */
+    }
+
+}
+
+body {
+    min-width: 320px;
+
+    font-family: $font_normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.4;
+
+    color: $color_black;
+}
+
+/* Global Typography
+   ========================================================================== */
+a {
+    text-decoration: none;
+
+    color: $color_black;
+
+    transition: opacity $transition_speed ease-in-out, color $transition_speed ease-in-out;
+
+    &:hover {
+        text-decoration: none;
+
+        @include media(">t") {
+            color: $color_black;
+        }
+    }
+}
