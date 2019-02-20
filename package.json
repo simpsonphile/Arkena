@@ -48,7 +48,8 @@
   "dependencies": {
     "include-media": "^1.4.9",
     "normalize.css": "^8.0.1",
-    "terser": "3.14.1"
+    "terser": "3.14.1",
+    "tiny-slider": "^2.9.1"
   },
   "standard": {
     "globals": [

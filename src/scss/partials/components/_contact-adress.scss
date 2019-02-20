@@ -1,7 +1,12 @@
 .c-contact-adress {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     margin-top: 1.5rem;
+
+    @include media('<=m'){
+        align-items: unset;
+    }
 
     &__heading {
         text-align: right;

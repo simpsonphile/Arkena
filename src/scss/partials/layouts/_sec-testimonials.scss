@@ -44,7 +44,26 @@
         background-size: cover;
     }
 
-    .slick-dots {
-        margin-top: 4rem;
+    .tns-nav {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 2rem;
+        left: 0;
+        right: 0;
+        z-index: 2;
+
+        button {
+            width: 1rem;
+            height: 1rem;
+            margin: .5rem;
+            border-radius: 50%;
+            background: $white;
+            opacity: .5;
+            border: 0;
+
+            &.tns-nav-active {opacity: 1;}
+        }
+        
     }
 }
